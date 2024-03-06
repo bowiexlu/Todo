@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDo.Views.TodoItemPage"  
+             Title="{Binding Name}"
+             xmlns:models="clr-namespace:ToDo.Models"
+             x:DataType="models:TodoItem">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="10"
+                             VerticalOptions="StartAndExpand">
+            <Label Text="Ärende"/>
+            <Entry Text="{Binding Name}"/>
+            <Label Text="Anteckningar"/>
+            <Entry Text="{Binding Notes}"/>
+            <Label Text="Utfört"/>
+            <Switch IsToggled="{Binding Done}"/>
+            <Button Text="Spara"
+                    Clicked="OnSaveClicked" />
+            <Button Text="Radera"
+                    Clicked="OnDeleteClicked" />
+            <Button Text="Ångra"
+                    Clicked="OnCancelClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
